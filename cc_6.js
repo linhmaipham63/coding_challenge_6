@@ -93,3 +93,20 @@ let discount10Percent = function(order) {
 // Test Data:
 console.log(applyBulkDiscount(orders, discount10Percent)); 
 
+
+// Task 7: Closures
+
+// Write function createExpenseTracker() that returns another function to add expenses and keep a running total
+function createExpenseTracker() {
+    let totalExpense = 0;
+    return function(amount) {
+        totalExpense += amount; 
+        console.log(`Total Expenses: $${totalExpense}`);
+    }
+}
+
+// Test Data:
+let tracker = createExpenseTracker();
+tracker(200); 
+tracker(150); 
+
